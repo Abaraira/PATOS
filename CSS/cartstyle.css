@@ -1,0 +1,244 @@
+
+body {
+    margin: 0;
+}
+
+header, footer {
+    background-color: #ffd95f;
+}
+header{
+    height: 119px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70vh;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+footer {
+    height: 181px;
+}
+
+/*----------------------------------------------------*/
+/* H  E  A  D  E  R */
+/*----------------------------------------------------*/ 
+
+.header{
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+/*header LEFT*/
+.headerLeft{
+    display: flex;
+    align-items: center;
+}
+
+.duckLogo {
+    width: 91px;
+    height: 91px;
+    border-radius: 50%;
+    margin-left: 42px;
+   
+}
+
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.headerNav{
+    color: black;
+    margin-right: 2px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    margin: 0 150px;
+    letter-spacing: 2px;
+}
+.headerNav:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+
+/*HEADER RIGHT*/
+.navRight{
+    display: flex;
+    align-items: center;
+}
+.carrito {
+    width: 55px;
+    height: 55px;
+    margin-right: 40px;
+}
+.usuario {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+}
+
+.carrito:hover, .usuario:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+/*----------------------------------------------------*/
+/* F  O  O  T  E  R */
+/*----------------------------------------------------*/
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*footer left*/
+.companyInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+}
+.duckLogoFooter{
+    margin-left: 50px;
+}
+.companyData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.companyData p{
+    /*
+    margin-bottom: 1px;
+    */
+    margin: 0;
+    margin-left: 30px;
+    line-height: 1.4;
+}
+
+/*footer center*/
+.footerCenter{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.footerCenter p{
+    font-size: 16px;
+    font-family: 'Poppins' sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/*footer right*/
+.socialNet {
+    margin: 20px 50px 0 0;
+    display: flex;
+    align-items: center;
+}
+.socialIcono {
+    width: 50px;
+    height: 50px;
+    margin-left: 40px;
+
+}
+/*----------------------------------------------------*/
+/*  DESDE AQUI MAIN  */
+/*----------------------------------------------------*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow: hidden;
+}
+/*search bar*/
+.searchContainer {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center ;
+    width: 50vw;
+    margin: 0 auto;
+}
+.searchBar {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+.searchInput {
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    padding-right: 350px;
+    }
+.searchButton {
+    position: absolute;
+    width: auto;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    height: 40px;
+    border-radius: 25px;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+}
+/*catalog*/
+.catalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.catalogContainer {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2%;
+    max-width: 1200px;
+    width: 80vw;
+    margin: 0 auto;
+    gap: 4rem;
+    overflow: hidden;
+}
+.catalogItem {
+    box-sizing: border-box;
+    position: relative  ;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    align-items: center;
+}
+.duckImg {
+    position: relative;
+    height: 200px;
+    box-sizing: border-box;
+    width: auto ;
+    padding-bottom: 10px    ;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: scale-down;
+  
+}
+.nomDuck {
+  position: absolute;
+  transform: translateY(-120%);  
+  margin: 0;
+  padding: -2px;
+  color: rgb(0, 0, 0);
+  
+}

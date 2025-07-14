@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+
+    <meta name="description" content="Tienda especializada en patitos de goma: graciosos, únicos y coleccionables." />
+    <meta name="keywords" content="patitos de goma, tienda, coleccionables, Duck Store" />
+  
+    <link rel="stylesheet" href="./CSS/cartstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/x-icon" href="./IMG/Page/logo.png" />
+    
+    <title>Duck Store</title>
+  </head>
+  <body>
+    <header class="header">
+      <!--LEFT-->
+      <div class="headerLeft">
+      <a href="#"><img class="duckLogo" src="./IMG/Page/logo.png" /></a>
+      </div>
+      <!--CENTER-->
+      <div class="navbar">
+      <div><a class="headerNav" href="index.HTML">Home</a></div>
+      <div><a class="headerNav" href="catalog.HTML">Catálogo</a></div>
+      <div><a class="headerNav" href="contact.html">Contacto</a></div>
+      </div>
+      <!--RIGHT-->
+      <div class="navRight">
+      <a href="cart.html"
+      ><img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras"
+      /></a>
+
+      <a href="#"
+      ><img class="usuario" src="./IMG/Page/user.png" alt="Usuario"
+      /></a>
+      </div>
+  </header>
+
+    <main>  
+      <main class="checkoutContainer">
+
+  <section class="cesta">
+    <h2>Cesta</h2>
+    <p>Envío (4 artículo)</p>
+    <hr />
+    <div class="itemLista">
+      <div class="item">
+        <img src="./IMG/DuckImg/pato_chef.jpg" alt="Pato de goma" />
+        <div class="detalleItem">
+          <p><strong>Pato de Goma</strong></p>
+          <p>Tamaño: Medio</p>
+          <div class="accionesItem">
+            <a href="#">Editar</a> | <a href="#">Quitar artículo</a>
+          </div>
+        </div>
+        <div class="cantidadPrecio">
+          <label>Cantidad</label>
+          <input type="number" value="1" min="1" />
+          <span>(50%)</span>
+          <p>6,00€</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./IMG/DuckImg/pato_doctor.jpg" alt="Pato de goma" />
+        <div class="detalleItem">
+          <p><strong>Pato de Goma</strong></p>
+          <p>Tamaño: Medio</p>
+          <div class="accionesItem">
+            <a href="#">Editar</a> | <a href="#">Quitar artículo</a>
+          </div>
+        </div>
+        <div class="cantidadPrecio">
+          <label>Cantidad</label>
+          <input type="number" value="1" min="1" />
+          <span>(50%)</span>
+          <p>6,00€</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="total">
+      <p><strong>TOTAL:</strong> 24,00€</p>
+    </div>
+  </section>
+
+  <section class="procesoPago">
+    <h2>Proceso de Pago</h2>
+    <form>
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" />
+
+      <label for="direccion">Dirección</label>
+      <input type="text" id="direccion" name="direccion" />
+
+      <label>Método de pago</label>
+      <div class="metodoPago">
+        <div class="opcionPago"></div>
+        <div class="opcionPago seleccionada">
+          <img src="./assets/img/patoPago.png" alt="Pato método de pago" />
+          <p>Patitos de Goma<br /><strong>24,00€</strong></p>
+        </div>
+      </div>
+
+      <button type="submit" class="btnPagar">Pagar</button>
+    </form>
+  </section>
+</main>
+
+    </main>
+
+   <!--FOOTER-->
+    <footer>
+       <div class="footer">
+        <!--LEFT-->
+        <div class="companyInfo">
+          <a href=""
+            ><img
+              class="duckLogo duckLogoFooter"
+              src="./IMG/Page/logo.png"
+              alt="company Logo"
+          /></a>
+          <div class="companyData">
+            <p>+34 918 528 954</p>
+            <p>Barcelona, España</p>
+            <p>Privacy Policy</p>
+            <p>&COPY; 2025 Duck Store</p>
+          </div>
+        </div>
+        <!--CENTER-->
+        <div class="footerCenter">
+          <p>Bienvenido al maravilloso mundo de los patitos de goma.</p>
+        </div>
+        <!--RIGHT-->
+        <div class="socialNet">
+          <div class="socialIconos">
+            <a href="https://www.tiktok.com/" target="_blank"
+              ><img
+                class="socialIcono"
+                src="./IMG/Page/tiktok.png"
+                alt="tiktok"
+            /></a>
+            <a href="https://x.com/" target="_blank"
+              ><img
+                class="socialIcono"
+                src="./IMG/Page/tiktok.png"
+                alt="x"
+            /></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><img
+                class="socialIcono"
+                src="./IMG/Page/tiktok.png"
+                alt="insta"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body> 
+  </html>

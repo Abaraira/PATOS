@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+   
+}
+
+header, footer {
+    background-color: #ffd95f;
+}
+header{
+    height: 119px;
+}
+main{
+    background-color: rgb(255, 255, 255);
+    height: 724px;
+}
+footer {
+    height: 181px;
+}
+/*----------------------------------------------------*/
+/* H  E  A  D  E  R */
+/*----------------------------------------------------*/ 
+
+.header{
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+/*header LEFT*/
+.headerLeft{
+    display: flex;
+    align-items: center;
+}
+
+.duckLogo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-left: 42px;
+   
+}
+
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+.headerNav{
+    color: black;
+    margin-right: 2px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    margin: 0 150px;
+    letter-spacing: 2px;
+}
+.headerNav:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+
+/*HEADER RIGHT*/
+.navRight{
+    display: flex;
+    align-items: center;
+}
+.carrito {
+    width: 55px;
+    height: 55px;
+    margin-right: 40px;
+}
+.usuario {
+    width: 50px;
+    height: 50px;
+    margin-right: 50px;
+}
+
+.carrito:hover, .usuario:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/*----------------------------------------------------*/
+/* MAIN CONTACT */
+/*----------------------------------------------------*/
+
+main {
+  /*width: 100%;*/
+  max-width: 100%;
+  display: flex; /*necesario para mobile first view*/
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+.background-container {
+  background-image: url("../IMG/DuckImg/fondo2.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 414px;
+  height: 710px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 10px 12px 20px rgba(0, 0, 0, 0.25); 
+
+
+}
+
+/* Capa para opacidad encima de la imagen */
+/* con fondo blanco semi-transparente */
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); 
+  z-index: 2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  color: black;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+
+
+ .button {
+  background-color: #ffefc8; /* Color similar al botón de la imagen */
+  color: #000000; /* Texto negro */
+  border: none;
+  width: 150px;
+  padding: 12px 24px;
+  border-radius: 20px; /* Bordes redondeados */
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;           /* Necesario para usar margin auto */
+  margin: 20px auto 0 auto; /* ¡Esto lo centra! */
+  
+}
+
+button:hover {
+  background-color: #ffe8ac
+}
+}
+
+/*----------------------------------------------------*/
+/* F  O  O  T  E  R */
+/*----------------------------------------------------*/
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*footer left*/
+.companyInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+}
+.duckLogoFooter{
+    margin-left: 50px;
+}
+.companyData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+.companyData p{
+    /*
+    margin-bottom: 1px;
+    */
+    margin: 0;
+    margin-left: 30px;
+    line-height: 1.4;
+}
+
+/*footer center*/
+.footerCenter{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.footerCenter p{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/*footer right*/
+.socialNet {
+    margin: 50px 50px 0 0;
+    display: flex;
+    align-items: center;
+}
+.socialIcono {
+    width: 50px;
+    height: 50px;
+    margin-left: 40px;
+
+}
+/*----------------------------------------------------*/
+/*  DESDE AQUI MAIN  */
+/*----------------------------------------------------*/

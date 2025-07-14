@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/detailstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/HTML EDITADOS/Images/Logo.png" />
+    <!--favcon -->
+    <title>Duck Store</title>
+  </head>
+  <body>
+
+    <!--HEADER-->
+
+ <header class="header">
+      <!--LEFT-->
+      <div class="headerLeft">
+      <a href="#"><img class="duckLogo" src="./IMG/Page/logo.png" /></a>
+      </div>
+      <!--CENTER-->
+      <div class="navbar">
+      <div><a class="headerNav" href="index.HTML">Home</a></div>
+      <div><a class="headerNav" href="catalog.HTML">Catálogo</a></div>
+      <div><a class="headerNav" href="contact.html">Contacto</a></div>
+      </div>
+      <!--RIGHT-->
+      <div class="navRight">
+      <a href="cart.html"
+      ><img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras"
+      /></a>
+
+      <a href="#"
+      ><img class="usuario" src="./IMG/Page/user.png" alt="Usuario"
+      /></a>
+      </div>
+  </header>
+      <!--RIGHT-->
+      <div class="navRight">
+        <a href="cart.html"
+          ><img class="carrito" src="/HTML EDITADOS/Images/CARRITO.png"
+        /></a>
+
+        <a href="#"
+          ><img class="usuario" src="/HTML EDITADOS/Images/USUARIO.png"
+        /></a>
+      </div>
+    </header>
+
+    <!--MAIN-->
+
+     <main class="product-container">
+    <div class="product-image">
+      <img src="/HTML EDITADOS/Images/patito-gay.jpg" alt="Patito Gay">
+       <div class="tag-container">
+    <span class="tag">Interactivo</span>
+    <span class="tag">Temático</span>
+    <span class="tag">Mediano</span>
+  </div>
+      
+    </div>
+    <div class="product-info">
+      <h1>PATITO GAY</h1>
+      <p class="price">2,50€</p>
+      <hr>
+
+      <p class="description">
+        Celebrando la diversidad y el amor en todas sus formas, este pato multicolor es un homenaje vibrante a la comunidad LGTBI. 
+        ¡Lleno de personalidad, ideal para mostrar tu orgullo en la bañera o en tu colección! Su fabricación en España garantiza 
+        la calidad y el cuidado en cada detalle. Perfecto para coleccionar o como un regalo con un sello de autenticidad.
+      </p>
+      <hr>
+
+      <ul class="features">
+    <li>Reacciona al agua, hace sonidos y tiene luces</li>
+    <li>Mediano</li>
+    <li>Festivo</li>
+  </ul>
+
+
+      <div class="quantity-container">
+     <div class="quantity-selector">
+    <button onclick="changeQuantity(-1)">−</button>
+    <input type="number" id="quantity" value="1" min="1">
+    <button onclick="changeQuantity(1)">+</button>
+    </div>
+
+      <div class="buttons">
+        <button class="add-cart">AÑADIR AL CARRITO</button>
+      </div>
+    </div>
+  </main>
+
+  <!--FOOTER-->
+
+    <!--FOOTER-->
+    <footer>
+       <div class="footer">
+        <!--LEFT-->
+        <div class="companyInfo">
+          <a href=""
+            ><img
+              class="duckLogo duckLogoFooter"
+              src="./IMG/Page/logo.png"
+              alt="company Logo"
+          /></a>
+          <div class="companyData">
+            <p>+34 918 528 954</p>
+            <p>Barcelona, España</p>
+            <p>Privacy Policy</p>
+            <p>&COPY; 2025 Duck Store</p>
+          </div>
+        </div>
+        <!--CENTER-->
+        <div class="footerCenter">
+          <p>Bienvenido al maravilloso mundo de los patitos de goma.</p>
+        </div>
+        <!--RIGHT-->
+        <div class="socialNet">
+          <div class="socialIconos">
+            <a href="https://www.tiktok.com/" target="_blank"
+              ><img
+                class="socialIcono"
+                src="./IMG/Page/tiktok.png"
+                alt="tiktok"
+            /></a>
+            <a href="https://x.com/" target="_blank"
+              ><img
+                class="socialIcono"
+                src="./IMG/Page/tiktok.png"
+                alt="x"
+            /></a>
+            <a href="https://www.instagram.com/" target="_blank"
+              ><img
+                class="socialIcono"
+                src="./IMG/Page/tiktok.png"
+                alt="insta"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body> 
+  </html>
