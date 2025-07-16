@@ -22,14 +22,12 @@ footer {
     height: 181px;
 }
 
-/*----------------------------------------------------*/
-/* H  E  A  D  E  R */
-/*----------------------------------------------------*/ 
+
 
 .header{
     display: flex;
     justify-content: space-between;
-     align-items: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 10px 20px;
 }
@@ -80,6 +78,18 @@ footer {
     height: 55px;
     margin-right: 40px;
 }
+#cart-count {
+  position: absolute;
+  top: 75px;
+  right: 160px;
+  background-color: #5128E5;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
 .usuario {
     width: 50px;
     height: 50px;
@@ -90,9 +100,7 @@ footer {
     transform: scale(1.2);
     transition: transform 0.3s ease;
 }
-/*----------------------------------------------------*/
-/*  DESDE AQUI MAIN  */
-/*----------------------------------------------------*/
+
 
 .main {
     display: flex;
@@ -105,41 +113,41 @@ footer {
   display: flex;
   align-items: center;
   gap: 12px;
-  max-width: 1000px;      /* ⬅️ Más ancho */
+  max-width: 1000px;     
   padding: 0 15px;
-margin-left: 400px;
-margin-top: 50px;
+  margin-left: 400px;
+  margin-top: 50px;
 }
 .barra-busqueda {
   display: flex;
   flex: 1;
   border: 1px solid #000;
-  align-items: center;  /* centra verticalmente */
+  align-items: center;  
   border-radius: 40px;
   overflow: hidden;
   background: white;
-   padding: 6px 12px; /* menos padding vertical */
+  padding: 6px 12px; 
   font-size: 14px;
-  height: 30px; /* altura total del contenedor */
+  height: 30px; 
 }
 .barra-busqueda input {
   border: none;
   outline: none;
-  padding: 12px 16px;   /* más cómodo */
+  padding: 12px 16px;   
   flex: 1;
- font-size: 12px;
+  font-size: 12px;
 }
 
 .btn-buscar {
   background: none;
   border: none;
   cursor: pointer;
-    padding: 6px 10px;
+  padding: 6px 10px;
 }
 
 .btn-buscar img,
 .icono-filtro img {
-  width: 30px;   /* ⬅️ antes era 20px */
+  width: 30px;   
   height: 30px;
   display: block;
 }
@@ -148,11 +156,11 @@ margin-top: 50px;
   border: none;
   cursor: pointer;
 }
-/* Contenedor del sidebar */
+
 .sidebar {
   position: fixed;
   top: 0;
-  right: -300px; /* Oculto por defecto */
+  right: -300px; 
   width: 300px;
   height: 100vh;
   background-color: #fff;
@@ -171,12 +179,10 @@ margin-top: 50px;
   line-height: 1.2; /* Compacta verticalmente el texto */
 }
 
-/* Cuando está activo (visible) */
 .sidebar.activo {
   right: 0;
 }
 
-/* Botón de cerrar */
 #cerrar {
   position: absolute;
   top: 10px;
@@ -332,3 +338,46 @@ margin-top: 50px;
     margin-left: 40px;
 
 }
+
+/* =========================================================
+   PARCHE RESPONSIVE  —  mobile‑first sin dramas
+   ========================================================= */
+
+/* ------- Breakpoint XS: ≤ 600 px (móvil) ---------------- */
+@media (max-width: 600px) {
+  /* Header */
+  .header       {flex-direction: column; gap: 8px; height: auto;}
+  .headerLeft   {justify-content: center; margin: 0;}
+  .duckLogo     {width: 70px; height: 70px; margin-left: 0;}
+  .navbar       {flex-direction: column; align-items: center;}
+  .headerNav    {margin: 6px 0; font-size: 14px; letter-spacing: 1px;}
+
+  /* Icons */
+  .navRight     {margin-top: 4px;}
+  .carrito,
+  .usuario      {width: 36px; height: 36px; margin-right: 20px;}
+  #cart-count   {top: 58px; right: 110px;}
+
+  /* Buscador */
+  .busqueda-filtros            {max-width: 95vw; margin: 25px auto 0;}
+  .barra-busqueda              {height: 42px;}
+  .barra-busqueda input,
+  .barra-busqueda input::placeholder {font-size: 14px;}
+
+  /* Catálogo */
+  .catalogContainer {grid-template-columns: 1fr; gap: 2rem;}
+  .duckImg          {height: 180px;}
+
+  /* Footer */
+  .footer        {flex-direction: column; align-items: center; text-align: center; margin-top: 40px;}
+  .companyInfo,
+  .footerCenter,
+  .socialNet     {margin: 15px 0;}
+  .socialIcono   {margin-left: 25px; width: 40px; height: 40px;}
+}
+
+@media (max-width: 991px) {
+  /* Header */
+  .duckLogo     {width: 80px; height: 80px;}
+  .headerNav    {margin: 0 40px; font-size: 15px;}
+  .car
