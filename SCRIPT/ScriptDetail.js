@@ -19,10 +19,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const quantity = document.getElementById('quantity').value;
 
       // Guardar la cantidad en localStorage
-      localStorage.setItem('cantidad', quantity);
+      let quantityValue = parseInt(document.getElementById('quantity').value);
+      let currentCart = parseInt(localStorage.getItem('cartTotal')) || 0;
+
+      let newTotal = currentCart + quantity;
+
+      // Guardar nueva cantidad total
+      localStorage.setItem('cartTotal', newTotal);
+
+      // Redirigir al carrito
+      window.location.href = 'carrito.html';
 
       // Redirigir al carrito
       window.location.href = 'carrito.html';
     });
   }
 });v
+// Al cargar la página, mostrar el total en el icono del carrito
+document.addEventListener('DOMContentLoaded', () => {
+  const cartCountElement = document.getElementById('cart-count');
+  if (cartCountElement) {
+    const total = localStorage.getItem('cartTotal') || 0;
+    cartCountElement.textContent = total;
+  }
+});
