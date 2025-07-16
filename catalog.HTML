@@ -1,198 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/catalogstyle.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tienda especializada en patitos de goma: graciosos, únicos y coleccionables." />
+  <meta name="keywords" content="patitos de goma, tienda, coleccionables, Duck Store" />
+  <link rel="stylesheet" href="./CSS/catalogstyle.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="./IMG/Page/logo.png" />
+  <title>Duck Store</title>
+</head>
 
-    <link rel="icon" type="image/x-icon" href="./IMG/Page/logo.png" />
-    <!--favcon -->
-    <title>Duck Store</title>
-  </head>
-  <body>
-    <!--HEADER-->
+<body>
+  <!--HEADER-->
+  <header class="header">
+    <div class="headerLeft">
+      <a href="#"><img class="duckLogo" src="./IMG/Page/logo.png" alt="Logo de Duck Store" /></a>
+    </div>
 
- <header class="header">
-      <!--LEFT-->
-      <div class="headerLeft">
-      <a href="#"><img class="duckLogo" src="./IMG/Page/logo.png" /></a>
-      </div>
-      <!--CENTER-->
-      <div class="navbar">
+    <nav class="navbar" aria-label="Menú principal">
       <div><a class="headerNav" href="index.HTML">Home</a></div>
       <div><a class="headerNav" href="catalog.HTML">Catálogo</a></div>
       <div><a class="headerNav" href="contact.html">Contacto</a></div>
-      </div>
-      <!--RIGHT-->
-      <div class="navRight">
-      <a href="cart.html"
-      ><img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras"
-      /></a>
+    </nav>
 
-      <a href="#"
-      ><img class="usuario" src="./IMG/Page/user.png" alt="Usuario"
-      /></a>
-      </div>
+    <div class="navRight">
+      <a href="cart.html"><img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras" /></a>
+      <a href="#"><img class="usuario" src="./IMG/Page/user.png" alt="Acceder como Usuario" /></a>
+    </div>
   </header>
 
-    <main>
-      <div class="main"> 
+  <main>
+    <div class="main">
 
-         <!--SEARCH-->
-<!-- Contenedor de búsqueda + icono de filtro -->
-<div class="busqueda-filtros">
-  <div class="barra-busqueda">
-    <input type="text" placeholder="Buscar...">
-    <button class="btn-buscar">
-      <img src="./IMG/Page/search.png" alt="Buscar">
-    </button>
-  </div>
+      <!-- BÚSQUEDA Y FILTROS -->
+      <section role="search" aria-label="Buscador de productos">
+        <div class="busqueda-filtros">
+          <div class="barra-busqueda">
+            <input id="buscar" type="text" placeholder="Buscar..." />
+            <button class="btn-buscar" aria-label="Buscar">
+              <img src="./IMG/Page/search.png" alt="Icono de búsqueda" />
+            </button>
+          </div>
 
-  <button id="btn-filtros" class="icono-filtro">
-    <img src="./IMG/Page/filter.png" alt="Filtros">
-  </button>
-</div>
-<!-- Sidebar de filtros -->
-<div id="sidebar" class="sidebar">
-  <button id="cerrar">✖</button>
-  <h2>Filtros</h2>
+          <button id="btn-filtros" class="icono-filtro" aria-label="Mostrar filtros">
+            <img src="./IMG/Page/filter.png" alt="Icono de filtro" />
+          </button>
+        </div>
+      </section>
 
-  <!-- Tamaño -->
-  <div class="filtro-grupo">
-    <h3>Tamaño</h3>
-    <label><input type="checkbox" name="tamano" value="grande"> Grande</label><br>
-    <label><input type="checkbox" name="tamano" value="mediano"> Mediano</label><br>
-    <label><input type="checkbox" name="tamano" value="pequeno"> Pequeño</label>
-  </div>
+      <aside id="sidebar" class="sidebar" aria-label="Filtros de búsqueda">
+        <button id="cerrar" aria-label="Cerrar filtros">✖</button>
+        <h2>Filtros</h2>
 
-  <!-- Interactivo -->
-  <div class="filtro-grupo">
-    <h3>Interactivo</h3>
-    <label><input type="checkbox" name="interactivo" value="agua"> Reacción al agua</label><br>
-    <label><input type="checkbox" name="interactivo" value="sonido"> Con sonido</label><br>
-    <label><input type="checkbox" name="interactivo" value="luces"> Con luces</label>
-  </div>
+        <div class="filtro-grupo">
+          <h3>Tamaño</h3>
+          <label><input type="checkbox" name="tamano" value="grande" /> Grande</label><br />
+          <label><input type="checkbox" name="tamano" value="mediano" /> Mediano</label><br />
+          <label><input type="checkbox" name="tamano" value="pequeno" /> Pequeño</label>
+        </div>
 
-  <!-- Temático -->
-  <div class="filtro-grupo">
-    <h3>Temático</h3>
-    <label><input type="checkbox" name="tematico" value="animales"> Animales</label><br>
-    <label><input type="checkbox" name="tematico" value="profesiones"> Profesiones</label><br>
-    <label><input type="checkbox" name="tematico" value="personajes"> Personajes</label><br>
-    <label><input type="checkbox" name="tematico" value="festivo"> Festivo</label>
-  </div>
-</div>
-        <!--CATALOG-->
-        <section class="catalog">
-          <div class="catalogContainer">
-            <div class="catalogoItem">
-              <a href="detail.HTML">
-              <img src="./IMG/DuckImg/pato_gay.jpg" alt="Patito Gay" class="duckImg"/>
-              <p class="nomDuck">PATITO GAY</p> </a>
-              
-            </div>
-            <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_doctor.jpg" alt="Patito Doctor" class="duckImg" />
-              <p class="nomDuck">PATITO DOCTOR</p>
-              
-            </div>
-            <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_mickey_mouse.jpg" alt="Patito Mickey" class="duckImg"/>
-              <p class="nomDuck">PATITO MICKEY</p>
-              
-            </div>
-            <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_michael_jackson.jpg" alt="Patito MJ" class="duckImg" />
-              <p class="nomDuck">PATITO MICHAEL J.</p>
-              
-            </div>
-            <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_vaca.jpg" alt="Patito Vaca" class="duckImg"/>
-              <p class="nomDuck">PATITO VACA</p>
-              
-            </div>
-            <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_mono.jpg" alt="Patito Mono" class="duckImg"/>
-              <p class="nomDuck">PATITO MONO</p>
-              
-            </div>
-            <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_chef.jpg" alt="Patito Chef" class="duckImg"/>
-              <p class="nomDuck">PATITO CHEF</p>
-              
-            </div>
-             <div class="catalogoItem">
-              <img src="./IMG/DuckImg/pato_juez.jpg" alt="Patito Juez" class="duckImg"/>
-              <p class="nomDuck">PATITO JUEZ</p>
-              
-            </div>
+        <div class="filtro-grupo">
+          <h3>Interactivo</h3>
+          <label><input type="checkbox" name="interactivo" value="agua" /> Reacción al agua</label><br />
+          <label><input type="checkbox" name="interactivo" value="sonido" /> Con sonido</label><br />
+          <label><input type="checkbox" name="interactivo" value="luces" /> Con luces</label>
+        </div>
+
+        <div class="filtro-grupo">
+          <h3>Temático</h3>
+          <label><input type="checkbox" name="tematico" value="animales" /> Animales</label><br />
+          <label><input type="checkbox" name="tematico" value="profesiones" /> Profesiones</label><br />
+          <label><input type="checkbox" name="tematico" value="personajes" /> Personajes</label><br />
+          <label><input type="checkbox" name="tematico" value="festivo" /> Festivo</label>
+        </div>
+      </aside>
+
+      <!-- CATÁLOGO -->
+      <section class="catalog" aria-labelledby="titulo-catalogo">
+
+        <div class="catalogContainer">
+
+          <!-- Repite este bloque para cada producto -->
+          <div class="catalogoItem">
+            <a href="detail.HTML">
+              <img src="./IMG/DuckImg/pato_gay.jpg" alt="Patito de goma con bandera LGBT" class="duckImg" />
+              <p class="nomDuck">PATITO GAY</p>
+            </a>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_doctor.jpg" alt="Patito de goma disfrazado de doctor" class="duckImg" />
+            <p class="nomDuck">PATITO DOCTOR</p>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_mickey_mouse.jpg" alt="Patito inspirado en Mickey Mouse" class="duckImg" />
+            <p class="nomDuck">PATITO MICKEY</p>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_michael_jackson.jpg" alt="Patito inspirado en Michael Jackson" class="duckImg" />
+            <p class="nomDuck">PATITO MICHAEL J.</p>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_vaca.jpg" alt="Patito con disfraz de vaca" class="duckImg" />
+            <p class="nomDuck">PATITO VACA</p>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_mono.jpg" alt="Patito con disfraz de mono" class="duckImg" />
+            <p class="nomDuck">PATITO MONO</p>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_chef.jpg" alt="Patito vestido de chef" class="duckImg" />
+            <p class="nomDuck">PATITO CHEF</p>
+          </div>
+
+          <div class="catalogoItem">
+            <img src="./IMG/DuckImg/pato_juez.jpg" alt="Patito vestido de juez" class="duckImg" />
+            <p class="nomDuck">PATITO JUEZ</p>
+          </div>
+
+        </div>
+      </section>
     </div>
-    
-  </section>
-    </main>
-    <!--FOOTER-->
-    <footer>
-       <div class="footer">
-        <!--LEFT-->
-        <div class="companyInfo">
-          <a href=""
-            ><img
-              class="duckLogo duckLogoFooter"
-              src="./IMG/Page/logo.png"
-              alt="company Logo"
-          /></a>
-          <div class="companyData">
-            <p>+34 918 528 954</p>
-            <p>Barcelona, España</p>
-            <p>Privacy Policy</p>
-            <p>&COPY; 2025 Duck Store</p>
-          </div>
-        </div>
-        <!--CENTER-->
-        <div class="footerCenter">
-          <p>Bienvenido al maravilloso mundo de los patitos de goma.</p>
-        </div>
-        <!--RIGHT-->
-        <div class="socialNet">
-          <div class="socialIconos">
-            <a href="https://www.tiktok.com/" target="_blank"
-              ><img
-                class="socialIcono"
-                src="./IMG/Page/tiktok.png"
-                alt="tiktok"
-            /></a>
-            <a href="https://x.com/" target="_blank"
-              ><img
-                class="socialIcono"
-                src="./IMG/Page/tiktok.png"
-                alt="x"
-            /></a>
-            <a href="https://www.instagram.com/" target="_blank"
-              ><img
-                class="socialIcono"
-                src="./IMG/Page/tiktok.png"
-                alt="insta"
-            /></a>
-          </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+      <!--LEFT-->
+      <div class="companyInfo">
+        <a href="#">
+          <img class="duckLogo duckLogoFooter" src="./IMG/Page/logo.png" alt="Logo de Duck Store" />
+        </a>
+        <div class="companyData">
+          <p>+34 918 528 954</p>
+          <p>Barcelona, España</p>
+          <p><a href="#">Política de privacidad</a></p>
+          <p>&copy; 2025 Duck Store</p>
         </div>
       </div>
-    </footer>
-    <script>
-  const btnFiltros = document.getElementById('btn-filtros');
-  const sidebar = document.getElementById('sidebar');
-  const cerrar = document.getElementById('cerrar');
 
-  btnFiltros.addEventListener('click', () => {
-    sidebar.classList.add('activo');
-  });
+      <!--CENTER-->
+      <div class="footerCenter">
+        <p>Bienvenido al maravilloso mundo de los patitos de goma.</p>
+      </div>
 
-  cerrar.addEventListener('click', () => {
-    sidebar.classList.remove('activo');
-  });
-</script>
-  </body> 
-  </html>
+<!--RIGHT-->
+      <div class="socialNet">
+        <div class="socialIconos">
+          <a href="https://www.tiktok.com/" target="_blank">
+            <img class="socialIcono" src="./IMG/Page/tiktok.png" alt="TikTok de Duck Store" />
+          </a>
+          <a href="https://x.com/" target="_blank">
+            <img class="socialIcono" src="./IMG/Page/twitter.png" alt="Perfil de X de Duck Store" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img class="socialIcono" src="./IMG/Page/insta.png" alt="Instagram de Duck Store" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btnFiltros = document.getElementById('btn-filtros');
+    const sidebar = document.getElementById('sidebar');
+    const cerrar = document.getElementById('cerrar');
+
+    btnFiltros.addEventListener('click', () => {
+      sidebar.classList.add('activo');
+    });
+
+    cerrar.addEventListener('click', () => {
+      sidebar.classList.remove('activo');
+    });
+  </script>
+</body>
+</html>

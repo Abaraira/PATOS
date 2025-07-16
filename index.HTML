@@ -1,106 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/indexstyle.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="description" content="Tienda especializada en patitos de goma: graciosos, únicos y coleccionables." />
+    <meta name="keywords" content="patitos de goma, tienda, coleccionables, Duck Store" />
+
+    <link rel="stylesheet" href="./CSS/indexstyle.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="./IMG/Page/logo.png" />
-    <!--favcon -->
     <title>Duck Store</title>
   </head>
   <body>
- 
- <!--HEADER-->
- 
- <header class="header">
-      <!--LEFT-->
+    <!-- HEADER -->
+    <header class="header">
+      <!-- LEFT -->
       <div class="headerLeft">
-      <a href="#"><img class="duckLogo" src="./IMG/Page/logo.png" /></a>
+        <a href="index.html">
+          <img class="duckLogo" src="./IMG/Page/logo.png" alt="Logo Duck Store" />
+        </a>
       </div>
-      <!--CENTER-->
-      <div class="navbar">
-      <div><a class="headerNav" href="index.HTML">Home</a></div>
-      <div><a class="headerNav" href="catalog.HTML">Catálogo</a></div>
-      <div><a class="headerNav" href="contact.html">Contacto</a></div>
-      </div>
-      <!--RIGHT-->
+
+      <!-- CENTER -->
+      <nav class="navbar" aria-label="Menú principal">
+        <div><a class="headerNav" href="index.html">Home</a></div>
+        <div><a class="headerNav" href="catalog.html">Catálogo</a></div>
+        <div><a class="headerNav" href="contact.html">Contacto</a></div>
+      </nav>
+
+      <!-- RIGHT -->
       <div class="navRight">
-      <a href="cart.html"
-      ><img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras"
-      /></a>
-
-      <a href="#"
-      ><img class="usuario" src="./IMG/Page/user.png" alt="Usuario"
-      /></a>
+        <a href="cart.html">
+          <img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras" />
+        </a>
+        <a href="#">
+          <img class="usuario" src="./IMG/Page/user.png" alt="Usuario" />
+        </a>
       </div>
-  </header>
+    </header>
 
-    <!--MAIN-->
+    <!-- MAIN -->
+    <main>
+ <div class="background-container"></div>
+        <div class="hero-text">
+          <h1>Elige tu Patito Favorito</h1>
+          <p>Descubre nuestra colección única de patitos de goma con personalidades que nunca dejarán de sorprenderte.</p>
+        </div>
+      </section>
 
-<div class="hero-section">
-  <img src="./IMG/DuckImg/fondo3.jpg" alt="Ducks" class="background-image">
-  <div class="overlay"></div>
-  <div class="hero-text">
-    <h1>Elige tu Patito Favorito</h1>
-    <p>Descubre nuestra colección única de patitos de goma con personalidades que nunca dejarán de sorprenderte.</p>
-  </div>
-</div>
+      <div class="button-container">
+        <a href="catalog.html" class="button">VER CATÁLOGO</a>
+      </div>
+    </main>
 
-  <div class="button-container">
-    <a href="catalog.HTML" class="button">VER CATÁLOGO</a>
-  </div>
-
-
-    <!--FOOTER-->
+    <!-- FOOTER -->
     <footer>
-       <div class="footer">
-        <!--LEFT-->
+      <div class="footer">
+        <!-- LEFT -->
         <div class="companyInfo">
-          <a href=""
-            ><img
-              class="duckLogo duckLogoFooter"
-              src="./IMG/Page/logo.png"
-              alt="company Logo"
-          /></a>
+          <a href="index.html">
+            <img class="duckLogo duckLogoFooter" src="./IMG/Page/logo.png" alt="Logo de Duck Store" />
+          </a>
           <div class="companyData">
             <p>+34 918 528 954</p>
             <p>Barcelona, España</p>
             <p>Privacy Policy</p>
-            <p>&COPY; 2025 Duck Store</p>
+            <p>&copy; 2025 Duck Store</p>
           </div>
         </div>
-        <!--CENTER-->
+
+        <!-- CENTER -->
         <div class="footerCenter">
           <p>Bienvenido al maravilloso mundo de los patitos de goma.</p>
         </div>
+
         <!--RIGHT-->
-        <div class="socialNet">
-          <div class="socialIconos">
-            <a href="https://www.tiktok.com/" target="_blank"
-              ><img
-                class="socialIcono"
-                src="./IMG/Page/tiktok.png"
-                alt="tiktok"
-            /></a>
-            <a href="https://x.com/" target="_blank"
-              ><img
-                class="socialIcono"
-                src="./IMG/Page/tiktok.png"
-                alt="x"
-            /></a>
-            <a href="https://www.instagram.com/" target="_blank"
-              ><img
-                class="socialIcono"
-                src="./IMG/Page/tiktok.png"
-                alt="insta"
-            /></a>
-          </div>
+      <div class="socialNet">
+        <div class="socialIconos">
+          <a href="https://www.tiktok.com/" target="_blank">
+            <img class="socialIcono" src="./IMG/Page/tiktok.png" alt="TikTok de Duck Store" />
+          </a>
+          <a href="https://x.com/" target="_blank">
+            <img class="socialIcono" src="./IMG/Page/twitter.png" alt="Perfil de X de Duck Store" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img class="socialIcono" src="./IMG/Page/insta.png" alt="Instagram de Duck Store" />
+          </a>
         </div>
       </div>
-    </footer>
-  </body> 
-  </html>
+    </div>
+  </footer>
+  </body>
+</html>
