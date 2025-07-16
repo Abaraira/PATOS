@@ -267,7 +267,20 @@ margin-top: 50px;
     transform: translateY(0);
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
 .catalogItem {
     box-sizing: border-box;
     position: relative  ;
@@ -288,7 +301,7 @@ margin-top: 50px;
     object-fit: scale-down;
      transition: transform 0.3s ease, filter 0.3s ease;
 }
-.catalogoItem:hover .duckImg{
+.catalogItem:hover .duckImg {
   transform: scale(1.1);
 }
 .nomDuck {

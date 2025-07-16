@@ -1,5 +1,4 @@
-
-  //SIDEBAR FILTROS--------------------
+//SIDEBAR FILTROS--------------------
 const btnFiltros = document.getElementById('btn-filtros');
 const sidebar = document.getElementById('sidebar');
 const cerrar = document.getElementById('cerrar');
@@ -136,19 +135,21 @@ buscarInput.addEventListener('input', () => {
 
 function renderCatalogo(productos) {
   const container = document.querySelector('.catalogContainer');
-  container.innerHTML = ''; // Limpia productos actuales
+  container.innerHTML = '';
 
   productos.forEach(p => {
     const item = document.createElement('div');
-    item.classList.add('catalogItem');
+    item.classList.add('catalogItem', 'fade-in');
+
     item.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}" class="duckImg" />
-      <p class="nomDuck">${p.nombre}</p>
+      <a href="detail.html">
+        <img src="${p.imagen}" alt="${p.nombre}" class="duckImg" />
+        <p class="nomDuck">${p.nombre}</p>
+      </a>
     `;
+
     container.appendChild(item);
   });
 }
 
-renderCatalogo(productos); // Llamada inicial
-
-
+renderCatalogo(productos); // llamada inicial
