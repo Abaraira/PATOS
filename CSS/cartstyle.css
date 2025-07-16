@@ -1,244 +1,104 @@
 
-body {
-    margin: 0;
-}
-
-header, footer {
-    background-color: #ffd95f;
-}
-header{
-    height: 119px;
-}
-main{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 70vh;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-}
-footer {
-    height: 181px;
-}
-
-/*----------------------------------------------------*/
-/* H  E  A  D  E  R */
-/*----------------------------------------------------*/ 
-
-.header{
-    display: flex;
-    justify-content: space-between;
-     align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 20px;
-}
-/*header LEFT*/
-.headerLeft{
-    display: flex;
-    align-items: center;
-}
-
-.duckLogo {
-    width: 91px;
-    height: 91px;
-    border-radius: 50%;
-    margin-left: 42px;
-   
-}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Poppins', sans-serif; }
 
 
-.navbar{
-    display: flex;
-    align-items: center;
-}
-.headerNav{
-    color: black;
-    margin-right: 2px;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
-    margin: 0 150px;
-    letter-spacing: 2px;
-}
-.headerNav:hover {
-    text-decoration: underline;
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-}
+header, footer         { background-color: #ffd95f; }
+header                 { height: 119px; }
+footer                 { height: 181px; }
+.main                  { background: white; } 
+main                   { width: 100%; }
 
 
-
-/*HEADER RIGHT*/
-.navRight{
-    display: flex;
-    align-items: center;
-}
-.carrito {
-    width: 55px;
-    height: 55px;
-    margin-right: 40px;
-}
-.usuario {
-    width: 50px;
-    height: 50px;
-    margin-right: 50px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
 }
 
-.carrito:hover, .usuario:hover{
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-}
+.headerLeft    { display: flex; align-items: center; }
+.duckLogo      { width: 91px; height: 91px; border-radius: 50%; margin-left: 42px; }
+
+.navbar        { display: flex; align-items: center; }
+.headerNav     { color: black; text-decoration: none; font-weight: 700; margin: 0 150px; letter-spacing: 2px; }
+.headerNav:hover { text-decoration: underline; transform: scale(1.2); transition: transform .3s; }
+
+.navRight      { display: flex; align-items: center; }
+.carrito       { width: 55px; height: 55px; margin-right: 40px; }
+.usuario       { width: 50px; height: 50px; margin-right: 50px; }
+.carrito:hover, .usuario:hover { transform: scale(1.2); transition: transform .3s; }
 
 
-/*----------------------------------------------------*/
-/* F  O  O  T  E  R */
-/*----------------------------------------------------*/
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-}
-
-/*footer left*/
-.companyInfo {
-    display: flex;
-    align-items: center;
-    margin-top: 45px;
-}
-.duckLogoFooter{
-    margin-left: 50px;
-}
-.companyData {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-}
-.companyData p{
-    /*
-    margin-bottom: 1px;
-    */
-    margin: 0;
-    margin-left: 30px;
-    line-height: 1.4;
-}
-
-/*footer center*/
-.footerCenter{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-.footerCenter p{
-    font-size: 16px;
-    font-family: 'Poppins' sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+.toggle-menu  { display: none; background: transparent; border: none; font-size: 2rem; cursor: pointer; margin-right: 1.5rem; }
 
 
-/*footer right*/
-.socialNet {
-    margin: 20px 50px 0 0;
-    display: flex;
-    align-items: center;
-}
-.socialIcono {
-    width: 50px;
-    height: 50px;
-    margin-left: 40px;
+.footer       { display: flex; justify-content: space-between; gap: 2rem; }
+.companyInfo  { display: flex; align-items: center; margin-top: 45px; }
+.duckLogoFooter { margin-left: 50px; }
 
-}
-/*----------------------------------------------------*/
-/*  DESDE AQUI MAIN  */
-/*----------------------------------------------------*/
+.companyData  { display: flex; flex-direction: column; align-items: center; }
+.companyData p{ margin: 0 0 1px 30px; line-height: 1.4; }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    overflow: hidden;
+.footerCenter { display: flex; align-items: center; margin-top: 20px; }
+.footerCenter p{ font-size: 16px; font-weight: bold; letter-spacing: 1px; }
+
+.socialNet    { margin: 20px 50px 0 0; display: flex; align-items: center; }
+.socialIcono  { width: 50px; height: 50px; margin-left: 40px; }
+
+.checkoutContainer {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
-/*search bar*/
-.searchContainer {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center ;
-    width: 50vw;
-    margin: 0 auto;
+
+.cesta,
+.procesoPago {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 0 12px rgba(0,0,0,.05);
 }
-.searchBar {
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 20px;
-    width: 100%;
+
+.cesta h2,
+.procesoPago h2 { margin-top: 0; font-size: 1.7rem; }
+
+.item            { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+.item img        { width: 80px; height: 80px; object-fit: cover; border-radius: 12px; }
+
+.detalleItem p   { margin: 2px 0; }
+
+.cantidadPrecio  { margin-left: auto; text-align: right; }
+.cantidadPrecio label { display: block; font-size: .8rem; color: #666; }
+
+.btnPagar {
+  display: block;
+  margin: 2rem auto 0;
+  padding: .8rem 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #b3d86d;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform .25s;
 }
-.searchInput {
-    height: 50px;
-    width: 100%;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    padding-left: 20px;
-    padding-right: 350px;
-    }
-.searchButton {
-    position: absolute;
-    width: auto;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-    height: 40px;
-    border-radius: 25px;
-    background-color: none;
-    border: none;
-    cursor: pointer;
-}
-/*catalog*/
-.catalog {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
-.catalogContainer {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 2%;
-    max-width: 1200px;
-    width: 80vw;
-    margin: 0 auto;
-    gap: 4rem;
-    overflow: hidden;
-}
-.catalogItem {
-    box-sizing: border-box;
-    position: relative  ;
-    width: 100%;
-    border-radius: 10px;
-    background-color: white;
-    align-items: center;
-}
-.duckImg {
-    position: relative;
-    height: 200px;
-    box-sizing: border-box;
-    width: auto ;
-    padding-bottom: 10px    ;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    object-fit: scale-down;
-  
-}
-.nomDuck {
-  position: absolute;
-  transform: translateY(-120%);  
-  margin: 0;
-  padding: -2px;
-  color: rgb(0, 0, 0);
-  
+.btnPagar:hover { transform: scale(1.05); }
+
+@media (max-width: 768px) {
+
+
+  .checkoutContainer { flex-direction: column; padding: 2rem 1.2rem; }
+
+
+  .navbar       { display: none; }
+  .toggle-menu  { display: block; }
+
+  .footer       { flex-direction: column; align-items: center; text-align: center; height: auto; padding-bottom: 2rem; }
+  .companyInfo, .socialNet { margin: 1rem 0; }
+  .socialIcono  { margin: 0 15px; }
 }
