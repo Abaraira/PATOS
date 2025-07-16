@@ -33,6 +33,7 @@
       <div class="navRight">
         <a href="cart.html">
           <img class="carrito" src="./IMG/Page/cart.png" alt="Carrito de Compras" />
+          <span id="cart-count">0</span>
         </a>
         <a href="#">
           <img class="usuario" src="./IMG/Page/user.png" alt="Usuario" />
@@ -121,15 +122,6 @@
     </div>
   </footer>
 
-    <script>
-      function changeQuantity(amount) {
-        const input = document.getElementById('quantity');
-        let current = parseInt(input.value);
-        if (!isNaN(current)) {
-          current = Math.max(1, current + amount);
-          input.value = current;
-        }
-      }
-    </script>
+<script src="./SCRIPT/ScriptDetail.js"></script>
   </body>
 </html>
