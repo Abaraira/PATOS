@@ -1,4 +1,4 @@
-//SIDEBAR FILTROS--------------------
+// SIDEBAR FILTROS
 const btnFiltros = document.getElementById('btn-filtros');
 const sidebar = document.getElementById('sidebar');
 const cerrar = document.getElementById('cerrar');
@@ -10,10 +10,9 @@ btnFiltros.addEventListener('click', () => {
 cerrar.addEventListener('click', () => {
   sidebar.classList.remove('activo');
 });
-  
-  //ARRAY-------------------
-  
-  const productos = [
+
+// ARRAY DE PRODUCTOS
+const productos = [
   {
     nombre: "PATITO GAY",
     imagen: "./IMG/DuckImg/pato_gay.jpg",
@@ -33,7 +32,7 @@ cerrar.addEventListener('click', () => {
     imagen: "./IMG/DuckImg/pato_mickey_mouse.jpg",
     categoria: "personajes",
     tamano: "pequeno",
-    interactivo: [ "sonido", "agua"]
+    interactivo: ["sonido", "agua"]
   },
   {
     nombre: "PATITO MICHAEL J.",
@@ -63,34 +62,38 @@ cerrar.addEventListener('click', () => {
     tamano: "mediano",
     interactivo: ["sonido"]
   },
-{
-  nombre: "PATITO JUEZ",
-  imagen: "./IMG/DuckImg/pato_juez.jpg",
-  categoria: "profesiones",
-  tamano: "mediano",
-  interactivo: ["luces"]
-}
+  {
+    nombre: "PATITO JUEZ",
+    imagen: "./IMG/DuckImg/pato_juez.jpg",
+    categoria: "profesiones",
+    tamano: "mediano",
+    interactivo: ["luces"]
+  }
 ];
 
 const container = document.querySelector('.catalogContainer');
 
+//.map() para generar y renderizar los productos
 function renderProductos(lista) {
-  container.innerHTML = ''; // limpiar contenido
+  container.innerHTML = '';
 
-  lista.forEach(pato => {
-    const item = document.createElement('div');
-    item.className = 'catalogItem';
-    item.innerHTML = `
-      <img src="${pato.imagen}" alt="${pato.nombre}" class="duckImg" />
-      <p class="nomDuck">${pato.nombre}</p>
+  const items = lista.map(pato => {
+    const div = document.createElement('div');
+    div.classList.add('catalogItem', 'fade-in');
+    div.innerHTML = `
+      <a href="detail.html">
+        <img src="${pato.imagen}" alt="${pato.nombre}" class="duckImg" />
+        <p class="nomDuck">${pato.nombre}</p>
+      </a>
     `;
-    container.appendChild(item);
+    return div;
   });
+
+// Añadir todos los elementos al DOM
+  container.append(...items);
 }
 
-// render inicial
-renderProductos(productos);
-
+// Filtros seleccionados
 function obtenerFiltrosSeleccionados() {
   const filtros = {
     tamano: [],
@@ -105,6 +108,7 @@ function obtenerFiltrosSeleccionados() {
   return filtros;
 }
 
+// Aplicar filtros
 function aplicarFiltros() {
   const { tamano, interactivo, categoria } = obtenerFiltrosSeleccionados();
 
@@ -124,32 +128,13 @@ document.querySelectorAll('aside input[type="checkbox"]').forEach(cb => {
   cb.addEventListener('change', aplicarFiltros);
 });
 
-//BUSCADOR--------------------------------
-
+// BUSCADOR
 const buscarInput = document.getElementById('buscar');
 buscarInput.addEventListener('input', () => {
   const texto = buscarInput.value.toLowerCase();
   const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(texto));
-  renderCatalogo(filtrados);
+  renderProductos(filtrados);
 });
 
-function renderCatalogo(productos) {
-  const container = document.querySelector('.catalogContainer');
-  container.innerHTML = '';
-
-  productos.forEach(p => {
-    const item = document.createElement('div');
-    item.classList.add('catalogItem', 'fade-in');
-
-    item.innerHTML = `
-      <a href="detail.html">
-        <img src="${p.imagen}" alt="${p.nombre}" class="duckImg" />
-        <p class="nomDuck">${p.nombre}</p>
-      </a>
-    `;
-
-    container.appendChild(item);
-  });
-}
-
-renderCatalogo(productos); // llamada inicial
+// Render inicial
+renderProductos(productos);
