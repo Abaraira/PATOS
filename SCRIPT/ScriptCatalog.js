@@ -71,13 +71,23 @@ const productos = [
   }
 ];
 
+// .reduce() para contar productos por categoría
+const conteoCategorias = productos.reduce((acc, pato) => {
+  acc[pato.categoria] = (acc[pato.categoria] || 0) + 1;
+  return acc;
+}, {});
+console.log('Cantidad de productos por categoría:', conteoCategorias);
+
 const container = document.querySelector('.catalogContainer');
 
-//.map() para generar y renderizar los productos
+// .map() para generar y renderizar los productos
 function renderProductos(lista) {
   container.innerHTML = '';
 
-  const items = lista.map(pato => {
+// .sort() para orden alfabético
+  const ordenados = [...lista].sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+  const items = ordenados.map(pato => {
     const div = document.createElement('div');
     div.classList.add('catalogItem', 'fade-in');
     div.innerHTML = `
