@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('cartTotal', newTotal);
 
       // Redirigir al carrito
-      window.location.href = 'carrito.html';
+      window.location.href = 'cart.html';
 
       // Redirigir al carrito
-      window.location.href = 'carrito.html';
+      window.location.href = 'cart.html';
     });
   }
 });v

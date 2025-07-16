@@ -1,5 +1,20 @@
 
-    const productos = [
+  //SIDEBAR FILTROS--------------------
+const btnFiltros = document.getElementById('btn-filtros');
+const sidebar = document.getElementById('sidebar');
+const cerrar = document.getElementById('cerrar');
+
+btnFiltros.addEventListener('click', () => {
+  sidebar.classList.add('activo');
+});
+
+cerrar.addEventListener('click', () => {
+  sidebar.classList.remove('activo');
+});
+  
+  //ARRAY-------------------
+  
+  const productos = [
   {
     nombre: "PATITO GAY",
     imagen: "./IMG/DuckImg/pato_gay.jpg",
@@ -49,35 +64,91 @@
     tamano: "mediano",
     interactivo: ["sonido"]
   },
-  {
-    nombre: "PATITO JUEZ",
-    imagen: "./IMG/DuckImg/pato_juez.jpg",
-    categoria: "profesiones",
-    tamano: "mediano",
-    interactivo: ["agua"]
-  }
+{
+  nombre: "PATITO JUEZ",
+  imagen: "./IMG/DuckImg/pato_juez.jpg",
+  categoria: "profesiones",
+  tamano: "mediano",
+  interactivo: ["luces"]
+}
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const catalogContainer = document.querySelector(".catalogContainer");
-  const inputBuscar = document.getElementById("buscar");
+const container = document.querySelector('.catalogContainer');
 
-  function mostrarProductos(lista) {
-    catalogContainer.innerHTML = lista.map(producto => `
-      <div class="catalogoItem">
-        <img src="${producto.imagen}" alt="${producto.nombre}" class="duckImg" />
-        <p class="nomDuck">${producto.nombre}</p>
-      </div>
-    `).join("");
-  }
+function renderProductos(lista) {
+  container.innerHTML = ''; // limpiar contenido
 
-  // Mostrar todos al cargar
-  mostrarProductos(productos);
-
-  // Búsqueda
-  inputBuscar.addEventListener("input", () => {
-    const texto = inputBuscar.value.toLowerCase();
-    const filtrados = productos.filter(pato => pato.nombre.toLowerCase().includes(texto));
-    mostrarProductos(filtrados);
+  lista.forEach(pato => {
+    const item = document.createElement('div');
+    item.className = 'catalogItem';
+    item.innerHTML = `
+      <img src="${pato.imagen}" alt="${pato.nombre}" class="duckImg" />
+      <p class="nomDuck">${pato.nombre}</p>
+    `;
+    container.appendChild(item);
   });
+}
+
+// render inicial
+renderProductos(productos);
+
+function obtenerFiltrosSeleccionados() {
+  const filtros = {
+    tamano: [],
+    interactivo: [],
+    categoria: []
+  };
+
+  document.querySelectorAll('input[name="tamano"]:checked').forEach(cb => filtros.tamano.push(cb.value));
+  document.querySelectorAll('input[name="interactivo"]:checked').forEach(cb => filtros.interactivo.push(cb.value));
+  document.querySelectorAll('input[name="tematico"]:checked').forEach(cb => filtros.categoria.push(cb.value));
+
+  return filtros;
+}
+
+function aplicarFiltros() {
+  const { tamano, interactivo, categoria } = obtenerFiltrosSeleccionados();
+
+  const filtrados = productos.filter(pato => {
+    const cumpleTamano = tamano.length ? tamano.includes(pato.tamano) : true;
+    const cumpleCategoria = categoria.length ? categoria.includes(pato.categoria) : true;
+    const cumpleInteractivo = interactivo.length ? interactivo.every(i => pato.interactivo.includes(i)) : true;
+
+    return cumpleTamano && cumpleCategoria && cumpleInteractivo;
+  });
+
+  renderProductos(filtrados);
+}
+
+// Escuchar cambios en los checkboxes
+document.querySelectorAll('aside input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', aplicarFiltros);
 });
+
+//BUSCADOR--------------------------------
+
+const buscarInput = document.getElementById('buscar');
+buscarInput.addEventListener('input', () => {
+  const texto = buscarInput.value.toLowerCase();
+  const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(texto));
+  renderCatalogo(filtrados);
+});
+
+function renderCatalogo(productos) {
+  const container = document.querySelector('.catalogContainer');
+  container.innerHTML = ''; // Limpia productos actuales
+
+  productos.forEach(p => {
+    const item = document.createElement('div');
+    item.classList.add('catalogItem');
+    item.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}" class="duckImg" />
+      <p class="nomDuck">${p.nombre}</p>
+    `;
+    container.appendChild(item);
+  });
+}
+
+renderCatalogo(productos); // Llamada inicial
+
+
