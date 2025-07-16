@@ -42,8 +42,8 @@ const productos = [
     interactivo: ["luces"]
   },
   {
-    nombre: "PATITO VACA",
-    imagen: "./IMG/DuckImg/pato_vaca.jpg",
+    nombre: "PATITO ALCE",
+    imagen: "./IMG/DuckImg/pato_alce.jpg",
     categoria: "animales",
     tamano: "grande",
     interactivo: ["sonido"]
