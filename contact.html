@@ -48,18 +48,27 @@
 
     <!-- MAIN CONTACT -->
     <main>
-      <div class="background-container">
-        <form class="contact-form" id="contactform">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required />
+    <div class="background-container">
+    <form class="contact-form" id="contactform">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required />
 
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required />
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
 
-          <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-          
-          <button class="button" type="submit">Enviar</button>
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <div id="captchaContainer" style="display: none;">
+        <label for="captchaAnswer">¿Qué le dice un pato a otro cuando llega?</label>
+        <input type="text" id="captchaAnswer" name="captchaAnswer" />
+        <p id="captchaError" style="color: red; display: none;">Respuesta incorrecta. Intenta de nuevo.</p>
+      </div>
+
+      <button class="button" type="submit">Enviar</button>
+    </form> 
+
+    <div class="confirmationMessage" id="confirmationMessage"></div>
         </form>
       </div>
     </main>

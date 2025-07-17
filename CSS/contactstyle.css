@@ -158,7 +158,6 @@ main {
   padding: 12px 24px;
   border-radius: 20px; /* Bordes redondeados */
   font-size: 16px;
-  font-weight: bold;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -171,6 +170,31 @@ main {
 button:hover {
   background-color: #ffe8ac
 }
+}
+
+.confirmationMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background-color: #ffefc8;
+  color: black;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-weight: bold;
+  z-index: 9999;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  text-align: center;
+}
+
+.confirmationMessage.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /*----------------------------------------------------*/
@@ -232,6 +256,3 @@ button:hover {
     margin-left: 40px;
 
 }
-/*----------------------------------------------------*/
-/*  DESDE AQUI MAIN  */
-/*----------------------------------------------------*/
