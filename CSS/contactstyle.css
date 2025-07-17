@@ -1,225 +1,259 @@
+/* ===========================================================
+   Duck Store Contact Page – Responsive CSS
+   Autor: ChatGPT · julio 2025
+   =========================================================== */
+
+/* ========= Variables CSS ========= */
+:root {
+  --c-brand: #ffd95f;                 /* Amarillo corporativo */
+  --c-brand-dark: #e6c446;            /* + contraste para AA */
+  --c-accent: #ffefc8;                /* Botones / acento */
+  --c-text: #000;
+  --radius: 20px;
+}
+
+/* ========= Reset y base ========= */
+*, *::before, *::after { box-sizing: border-box; }
 body {
-    margin: 0;
-   
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: var(--c-text);
+  background: #fff;
 }
 
+/* ========= Contenedores principales ========= */
 header, footer {
-    background-color: #ffd95f;
+  background: var(--c-brand);
+  color: var(--c-text);
 }
-header{
-    height: 119px;
+header {
+  min-height: 6rem;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-main{
-    background-color: rgb(255, 255, 255);
-    height: 724px;
-}
-footer {
-    height: 181px;
-}
-/*----------------------------------------------------*/
-/* H  E  A  D  E  R */
-/*----------------------------------------------------*/ 
-
-.header{
-    display: flex;
-    justify-content: space-between;
-     align-items: center;
-    flex-wrap: wrap;
-    padding: 10px 20px;
-}
-/*header LEFT*/
-.headerLeft{
-    display: flex;
-    align-items: center;
-}
-
-.duckLogo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    margin-left: 42px;
-   
-}
-
-
-.navbar{
-    display: flex;
-    align-items: center;
-}
-.headerNav{
-    color: black;
-    margin-right: 2px;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
-    margin: 0 150px;
-    letter-spacing: 2px;
-}
-.headerNav:hover {
-    text-decoration: underline;
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-}
-
-
-
-/*HEADER RIGHT*/
-.navRight{
-    display: flex;
-    align-items: center;
-}
-.carrito {
-    width: 55px;
-    height: 55px;
-    margin-right: 40px;
-}
-.usuario {
-    width: 50px;
-    height: 50px;
-    margin-right: 50px;
-}
-
-.carrito:hover, .usuario:hover{
-    transform: scale(1.2);
-    transition: transform 0.3s ease;
-}
-
-/*----------------------------------------------------*/
-/* MAIN CONTACT */
-/*----------------------------------------------------*/
 
 main {
-  /*width: 100%;*/
-  max-width: 100%;
-  display: flex; /*necesario para mobile first view*/
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+  padding: clamp(2rem, 4vw, 4rem) 1rem;
 }
+
+/* Quitamos alturas fijas en el hero */
 .background-container {
-  background-image: url("../IMG/DuckImg/fondo2.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 414px;
-  height: 710px;
+  background: url("../IMG/DuckImg/fondo2.jpg") center/cover no-repeat;
+  width: min(100%, 414px);
+  aspect-ratio: 414 / 710; /* Conserva proporción original */
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 20px rgb(0 0 0 /.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 10px 12px 20px rgba(0, 0, 0, 0.25); 
-
-
 }
 
-/* Capa para opacidad encima de la imagen */
-/* con fondo blanco semi-transparente */
+/* Capa de opacidad */
 .background-container::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.7); 
-  z-index: 2;
+  inset: 0;
+  background: rgba(255, 255, 255, .7);
+  z-index: 1;
 }
 
-.contact-form {
+/* ========= Header Left ========= */
+.headerLeft {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 90%;
+  align-items: center;
+}
+.duckLogo {
+  width: clamp(80px, 10vw, 110px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+/* ========= Navegación ========= */
+.navbar {
+  display: flex;
+  gap: clamp(.5rem, 4vw, 3rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.headerNav {
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.headerNav:hover,
+.headerNav:focus-visible {
+  text-decoration: underline;
+  transform: scale(1.15);
+  transition: transform .3s ease;
+}
+
+/* Botón hamburguesa */
+.toggle-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+}
+
+/* ========= Header Right ========= */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+.carrito,
+.usuario {
+  width: clamp(40px, 7vw, 55px);
+  aspect-ratio: 1;
+  transition: transform .3s;
+}
+.carrito:hover,
+.usuario:hover,
+.carrito:focus-visible,
+.usuario:focus-visible {
+  transform: scale(1.15);
+}
+
+/* ========= Formulario de contacto ========= */
+.contact-form {
   position: relative;
   z-index: 2;
-  color: black;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  width: min(90%, 28rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: .75rem 1rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font: inherit;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--c-brand-dark);
+  outline: none;
+}
 
-
- .button {
-  background-color: #ffefc8; /* Color similar al botón de la imagen */
-  color: #000000; /* Texto negro */
+/* Botón submit */
+.contact-form .button {
+  background: var(--c-accent);
   border: none;
-  width: 150px;
-  padding: 12px 24px;
-  border-radius: 20px; /* Bordes redondeados */
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  padding: .9rem 2.5rem;
+  border-radius: 50rem;
+  font-weight: 700;
+  margin-inline: auto;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: block;           /* Necesario para usar margin auto */
-  margin: 20px auto 0 auto; /* ¡Esto lo centra! */
-  
+  transition: background-color .3s ease, transform .2s ease;
+}
+.contact-form .button:hover,
+.contact-form .button:focus-visible {
+  background: #ffe8ac;
+  transform: scale(1.05);
 }
 
-button:hover {
-  background-color: #ffe8ac
-}
+/* Colorea controles nativos */
+input, progress {
+  accent-color: var(--c-brand-dark);
 }
 
-/*----------------------------------------------------*/
-/* F  O  O  T  E  R */
-/*----------------------------------------------------*/
-
+/* ========= Footer ========= */
 .footer {
-    display: flex;
-    justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: start;
+  padding: clamp(1rem, 4vw, 3rem);
 }
-
-/*footer left*/
 .companyInfo {
-    display: flex;
-    align-items: center;
-    margin-top: 45px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-.duckLogoFooter{
-    margin-left: 50px;
+.duckLogoFooter {
+  width: clamp(60px, 10vw, 110px);
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
 .companyData {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  text-align: center;
 }
-.companyData p{
-    /*
-    margin-bottom: 1px;
-    */
-    margin: 0;
-    margin-left: 30px;
-    line-height: 1.4;
+.footerCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/*footer center*/
-.footerCenter{
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
+.footerCenter p {
+  font-weight: bold;
+  letter-spacing: 1px;
 }
-.footerCenter p{
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-
-/*footer right*/
 .socialNet {
-    margin: 50px 50px 0 0;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(.5rem, 2vw, 2rem);
+  justify-content: center;
 }
 .socialIcono {
-    width: 50px;
-    height: 50px;
-    margin-left: 40px;
-
+  width: clamp(40px, 7vw, 50px);
+  aspect-ratio: 1;
 }
-/*----------------------------------------------------*/
-/*  DESDE AQUI MAIN  */
-/*----------------------------------------------------*/
+
+/* ========= Enfoque accesible ========= */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--c-brand-dark);
+  outline-offset: 3px;
+}
+
+/* ========= Navegación responsive ========= */
+@media (max-width: 768px) {
+  .toggle-menu { display: block; }
+
+  .navbar {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .navbar.is-open { max-height: 400px; }
+
+  .headerNav { padding: .5rem 0; }
+
+  header { gap: 1rem; }
+
+  /* Footer apilado */
+  .footer { text-align: center; }
+  .companyInfo { justify-content: center; }
+  .socialNet { margin-inline: auto; }
+}
+
+/* ========= Dark Mode ========= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-brand: #2c2c2c;
+    --c-brand-dark: #1e1e1e;
+    --c-text: #eee;
+    --c-accent: #b3d86d;
+  }
+  body { background: #121212; }
+  header, footer { color: var(--c-text); }
+  .background-container::before { background: rgba(0, 0, 0, .5); }
+  .contact-form input,
+  .contact-form textarea { background: #1e1e1e; color: var(--c-text); }
+}
