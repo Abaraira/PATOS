@@ -19,8 +19,8 @@
     </div>
 
     <nav class="navbar" aria-label="Menú principal">
-      <div><a class="headerNav" href="index.HTML">Home</a></div>
-      <div><a class="headerNav" href="catalog.HTML">Catálogo</a></div>
+      <div><a class="headerNav" href="index.html">Home</a></div>
+      <div><a class="headerNav" href="catalog.html">Catálogo</a></div>
       <div><a class="headerNav" href="contact.html">Contacto</a></div>
     </nav>
 
@@ -83,47 +83,47 @@
         <div class="catalogContainer">
 
           <!-- Repite este bloque para cada producto -->
-          <div class="catalogoItem">
+          <div class="catalogItem">
             <a href="detail.HTML">
               <img src="./IMG/DuckImg/pato_gay.jpg" alt="Patito de goma con bandera LGBT" class="duckImg" />
               <p class="nomDuck">PATITO GAY</p>
             </a>
           </div>
 
-          <div class="catalogoItem">
+          <!-- <div class="catalogItem"> -->
             <img src="./IMG/DuckImg/pato_doctor.jpg" alt="Patito de goma disfrazado de doctor" class="duckImg" />
             <p class="nomDuck">PATITO DOCTOR</p>
-          </div>
+          <!-- </div> -->
 
-          <div class="catalogoItem">
+          <!-- <div class="catalogItem"> -->
             <img src="./IMG/DuckImg/pato_mickey_mouse.jpg" alt="Patito inspirado en Mickey Mouse" class="duckImg" />
             <p class="nomDuck">PATITO MICKEY</p>
-          </div>
+          <!-- </div> -->
 
-          <div class="catalogoItem">
+          <!-- <div class="catalogItem"> -->
             <img src="./IMG/DuckImg/pato_michael_jackson.jpg" alt="Patito inspirado en Michael Jackson" class="duckImg" />
             <p class="nomDuck">PATITO MICHAEL J.</p>
-          </div>
+       <!--    </div> -->
+           
+          <!--<div class="catalogItem"> -->
+            <img src="./IMG/DuckImg/pato_alce.jpg" alt="Patito con disfraz de alce" class="duckImg" />
+            <p class="nomDuck">PATITO ALCE</p>
+          <!-- </div> -->
 
-          <div class="catalogoItem">
-            <img src="./IMG/DuckImg/pato_vaca.jpg" alt="Patito con disfraz de vaca" class="duckImg" />
-            <p class="nomDuck">PATITO VACA</p>
-          </div>
-
-          <div class="catalogoItem">
+          <!-- <div class="catalogItem"> -->
             <img src="./IMG/DuckImg/pato_mono.jpg" alt="Patito con disfraz de mono" class="duckImg" />
             <p class="nomDuck">PATITO MONO</p>
-          </div>
+          <!-- </div> -->
 
-          <div class="catalogoItem">
+          <!-- <div class="catalogItem"> -->
             <img src="./IMG/DuckImg/pato_chef.jpg" alt="Patito vestido de chef" class="duckImg" />
             <p class="nomDuck">PATITO CHEF</p>
-          </div>
+          <!-- </div> -->
 
-          <div class="catalogoItem">
+          <!-- <div class="catalogItem"> -->
             <img src="./IMG/DuckImg/pato_juez.jpg" alt="Patito vestido de juez" class="duckImg" />
             <p class="nomDuck">PATITO JUEZ</p>
-          </div>
+          <!-- </div> -->
 
         </div>
       </section>
@@ -167,19 +167,9 @@
       </div>
     </div>
   </footer>
+  
+<script src="./SCRIPT/ScriptCatalog.js"></script>
 
-  <script>
-    const btnFiltros = document.getElementById('btn-filtros');
-    const sidebar = document.getElementById('sidebar');
-    const cerrar = document.getElementById('cerrar');
-
-    btnFiltros.addEventListener('click', () => {
-      sidebar.classList.add('activo');
-    });
-
-    cerrar.addEventListener('click', () => {
-      sidebar.classList.remove('activo');
-    });
-  </script>
 </body>
 </html>
+

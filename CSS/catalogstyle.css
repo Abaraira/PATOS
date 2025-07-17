@@ -255,6 +255,31 @@ margin-top: 50px;
     margin: 0 auto;
     gap: 4rem;
     overflow: hidden;
+    animation: fadeSlide 0.8s ease-in-out;
+}
+   @keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
 }
 .catalogItem {
     box-sizing: border-box;
@@ -263,6 +288,7 @@ margin-top: 50px;
     border-radius: 10px;
     background-color: white;
     align-items: center;
+     animation: fadeIn 0.5s forwards;
 }
 .duckImg {
     position: relative;
@@ -273,6 +299,10 @@ margin-top: 50px;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     object-fit: scale-down;
+     transition: transform 0.3s ease, filter 0.3s ease;
+}
+.catalogItem:hover .duckImg {
+  transform: scale(1.1);
 }
 .nomDuck {
   position: absolute; 
@@ -282,6 +312,7 @@ margin-top: 50px;
   color: rgb(0, 0, 0);
   font-family: 'Poppins', sans-serif;
   font-weight:bold;
+
 }
 
 /*----------------------------------------------------*/
